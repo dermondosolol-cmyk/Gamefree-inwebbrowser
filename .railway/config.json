@@ -1,0 +1,17 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "buildpacks": ["node"]
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "startCommand": "PORT=$PORT npm run serve"
+  },
+  "environments": {
+    "production": {
+      "variables": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}

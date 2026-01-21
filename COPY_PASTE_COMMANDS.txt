@@ -1,0 +1,82 @@
+# 🎮 COPY & PASTE - NEXT STEP
+
+## Everything is ready. Just copy and paste these commands:
+
+---
+
+## Command 1: Navigate to Project
+```
+cd /workspaces/Gamefree-inwebbrowser
+```
+
+**What it does:** Moves terminal to your project folder
+
+---
+
+## Command 2: Start the Server
+```
+npm run serve
+```
+
+**What it does:** Starts development server on port 8000
+
+**Expected output:**
+```
+Server running on http://localhost:8000
+```
+
+---
+
+## Command 3: Open in Browser
+
+After seeing "Server running", open:
+```
+http://localhost:8000
+```
+
+---
+
+## That's It! 🚀
+
+Your application is now running as a trusted source with:
+- ✅ 160+ games
+- ✅ Authentication
+- ✅ Video calling
+- ✅ Chat system
+- ✅ Virtual PC
+
+---
+
+## How to Stop (when you're done)
+```
+Ctrl+C
+```
+
+(Hold Ctrl and press C in terminal)
+
+---
+
+## If Port 8000 Is Busy (macOS/Linux)
+```
+lsof -i :8000 | grep node | awk '{print $2}' | xargs kill -9
+```
+
+Then run: `npm run serve` again
+
+---
+
+## If Port 8000 Is Busy (Windows)
+```
+netstat -ano | findstr :8000
+```
+
+Then:
+```
+taskkill /PID [replace_with_PID] /F
+```
+
+Then run: `npm run serve` again
+
+---
+
+**Ready? Copy the commands above and paste into terminal!** ✨

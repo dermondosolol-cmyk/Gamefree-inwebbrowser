@@ -1,0 +1,406 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    GAMEFREE BROWSER 2026                                      ║
+║               DEPLOYMENT COMMAND REFERENCE CARD                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚡ QUICK COMMANDS
+
+Automated Full Deployment:
+  bash DEPLOY.sh
+
+Quick Test + Dev:
+  npm install && npm test && npm run dev
+
+Production Only:
+  npm install && npm run serve
+
+Development Mode:
+  npm run dev
+
+Production Server:
+  npm run serve
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📦 INSTALLATION
+
+Install All Dependencies:
+  npm install
+
+Download Playwright Browsers:
+  npm run pretest
+  OR
+  npx playwright install
+
+Verify Installation:
+  npm list
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔍 CODE QUALITY
+
+Lint Code:
+  npm run lint
+
+Auto-Fix Linting Issues:
+  npm run lint --fix
+
+Format Code:
+  npm run format
+
+Check Specific File:
+  npx eslint path/to/file.js
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🧪 TESTING
+
+Run All Tests:
+  npm test
+
+Watch Mode (Auto-rerun on changes):
+  npm run test:watch
+
+Debug Mode (with UI):
+  npm run test:debug
+
+Headed Mode (browser visible):
+  npm run test:headed
+
+Browser-Specific Tests:
+  npm run test:chrome       # Chromium
+  npm run test:firefox      # Firefox
+  npm run test:webkit       # WebKit
+  npm run test:mobile       # Mobile Chrome
+
+All Browser Engines:
+  npm run test:all-browsers
+
+View Test Report:
+  npm run test:report
+
+Single Test File:
+  npx playwright test tests/gamefree.spec.ts
+
+Specific Test:
+  npx playwright test -g "test name"
+
+Run with Timeout:
+  npx playwright test --timeout=60000
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🏗️ BUILDING
+
+Build for Production:
+  npm run build
+
+Full CI/CD Pipeline:
+  npm run ci
+
+Generate Build Artifacts:
+  npm run build -- --report
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 SERVER MANAGEMENT
+
+Start HTTP Server:
+  npm run serve
+
+Start with Development Mode:
+  npm run dev
+
+Use Custom Port:
+  http-server . -p 9000
+
+Stop Server:
+  Ctrl + C (or Cmd + C on Mac)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔧 DIAGNOSTICS
+
+Run System Diagnostics:
+  npm run diagnostics
+
+Generate Diagnostic Report:
+  npm run diagnostics > diagnostics_report.txt
+
+Check Playwright Setup:
+  npx playwright --version
+
+Check Installed Browsers:
+  npx playwright install --with-deps
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🧹 MAINTENANCE
+
+Clear npm Cache:
+  npm cache clean --force
+
+Reinstall Dependencies:
+  rm -rf node_modules && npm install
+
+Clear Node Modules (keep package.json):
+  rm -rf node_modules
+
+Update Dependencies:
+  npm update
+
+Check for Outdated Packages:
+  npm outdated
+
+Check for Security Issues:
+  npm audit
+
+Fix Security Issues:
+  npm audit fix
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 INFORMATION
+
+Show npm Version:
+  npm --version
+
+Show Node Version:
+  node --version
+
+List Installed Packages:
+  npm list
+
+List Global Packages:
+  npm list -g
+
+Show Package Info:
+  npm info package-name
+
+Show Project Info:
+  npm info
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🐛 DEBUGGING
+
+Run Tests in Debug Mode:
+  npm run test:debug
+
+Run Tests with Inspector:
+  node --inspect-brk ./node_modules/.bin/playwright test
+
+Run Tests Verbose:
+  npx playwright test --reporter=verbose
+
+Show Test Failures Only:
+  npx playwright test --reporter=list | grep FAILED
+
+Run Single Test in Debug:
+  npx playwright test -g "specific test" --debug
+
+Generate Trace:
+  npx playwright test --trace on
+
+View Trace:
+  npx playwright show-trace trace.zip
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🌐 ACCESSING PLATFORM
+
+Development Server:
+  http://localhost:8000
+
+Production Server:
+  http://localhost:8000
+
+Test Report:
+  View after: npm run test:report
+
+Game Sources:
+  • Gamezop
+  • Itch.io
+  • Construct 3
+  • HTMLGames
+  • iDev.Games
+
+Total Games: 1,000+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📝 COMMON WORKFLOWS
+
+Complete Setup & Test:
+  npm install && npm run pretest && npm test
+
+Setup & Development:
+  npm install && npm run dev
+
+Setup & Production:
+  npm install && npm run serve
+
+Quality Check:
+  npm run lint && npm run format
+
+Full Pipeline:
+  npm run lint && npm run format && npm test && npm run build
+
+Debug Single Test:
+  npm run test:debug
+
+Verify All Browsers:
+  npm run test:all-browsers
+
+Performance Baseline:
+  npm run test:headed (watch for timing)
+
+Security Check:
+  npm audit && npm run lint
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔐 ENVIRONMENT VARIABLES
+
+Enable Debug Logging:
+  DEBUG=true npm test
+
+Production Mode:
+  NODE_ENV=production npm run serve
+
+Custom Port:
+  PORT=9000 npm run serve
+
+Headless Mode (default):
+  HEADLESS=true npm test
+
+Headed Mode (visible browsers):
+  HEADLESS=false npm test
+
+Example Usage:
+  DEBUG=true NODE_ENV=production npm run dev
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 NPM SCRIPTS COMPLETE LIST
+
+Development:
+  npm run serve              Start HTTP server
+  npm run dev                Dev mode (server + watch)
+
+Testing:
+  npm test                   Run all tests
+  npm run test:watch         Watch mode
+  npm run test:debug         Debug mode with UI
+  npm run test:headed        Browser visible
+  npm run test:chrome        Chrome only
+  npm run test:firefox       Firefox only
+  npm run test:webkit        WebKit only
+  npm run test:mobile        Mobile Chrome
+  npm run test:all-browsers  All 6 browsers
+  npm run test:report        Show report
+
+Code Quality:
+  npm run lint               Lint code
+  npm run format             Format code
+  npm run build              Full build
+  npm run ci                 CI pipeline
+
+Diagnostics:
+  npm run diagnostics        Run system checks
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⏱️ TYPICAL EXECUTION TIMES
+
+npm install:              2-3 minutes
+npm run pretest:          2-3 minutes
+npm run lint:             30-60 seconds
+npm run format:           30-60 seconds
+npm test:                 3-5 minutes
+npm run test:all-browsers: 5-10 minutes
+npm run build:            1-2 minutes
+npm run diagnostics:      1-2 minutes
+
+Total Full Deploy:        8-15 minutes
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ TROUBLESHOOTING QUICK REFERENCE
+
+Issue: npm command not found
+  Solution: Install Node.js with npm
+
+Issue: "Module not found" error
+  Solution: npm install
+
+Issue: Port 8000 already in use
+  Solution: npx lsof -i :8000  (find process)
+           Kill process or use: PORT=9000 npm run serve
+
+Issue: Tests timeout
+  Solution: npx playwright test --timeout=120000
+
+Issue: Browser won't download
+  Solution: npx playwright install --with-deps
+
+Issue: Permission denied on DEPLOY.sh
+  Solution: chmod +x DEPLOY.sh
+
+Issue: TypeScript compilation error
+  Solution: npm install && npm run pretest
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ VERIFICATION CHECKLIST
+
+After Each Command:
+  ✅ Check exit code (should be 0)
+  ✅ Check for error messages
+  ✅ Verify expected output
+  ✅ Look for warnings
+  ✅ Ensure process completed
+
+After Full Deployment:
+  ✅ npm list shows all packages
+  ✅ npm test shows all tests passing
+  ✅ Server starts on port 8000
+  ✅ Browser loads platform
+  ✅ Diagnostics pass
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📞 ADDITIONAL RESOURCES
+
+Documentation:
+  • DEPLOYMENT_GUIDE.md
+  • TROUBLESHOOTING_GUIDE.md
+  • IMPLEMENTATION_GUIDE_2026.md
+  • QUICK_START_GUIDE.txt
+  • README_2026.md
+
+Configuration:
+  • package.json
+  • playwright.config.ts
+  • tsconfig.json
+  • .eslintrc
+  • .prettierrc
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 READY TO DEPLOY
+
+Execute any command above to begin deployment.
+
+Start with:
+  bash DEPLOY.sh
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Generated: January 21, 2026
+Version: 2.0.0
+Status: ✅ READY FOR DEPLOYMENT
+
+═══════════════════════════════════════════════════════════════════════════════

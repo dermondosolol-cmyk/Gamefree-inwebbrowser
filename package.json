@@ -1,0 +1,64 @@
+{
+  "name": "gamefree-browser-2026",
+  "version": "2.0.0",
+  "description": "Professional gaming browser with 1000+ games, automated testing, and advanced diagnostics",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "serve": "node server.cjs",
+    "serve:http": "http-server . -p 8000 -c-1 --cors",
+    "serve:production": "NODE_ENV=production node server.js",
+    "dev": "concurrently \"npm run serve\" \"npm run test:watch\"",
+    "test": "playwright test",
+    "test:watch": "playwright test --watch",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project='Mobile Chrome'",
+    "test:all-browsers": "playwright test --project=chromium --project=firefox --project=webkit --project='Microsoft Edge'",
+    "test:report": "playwright show-report",
+    "lint": "eslint . --ext .js,.ts --fix",
+    "format": "prettier --write \"**/*.{js,ts,html,css,json,md}\"",
+    "build": "npm run lint && npm run test",
+    "ci": "npm run lint && npm run test && npm run test:all-browsers",
+    "pretest": "playwright install",
+    "deploy:railway": "railway up",
+    "deploy:render": "render deploy",
+    "start": "NODE_ENV=production node server.js",
+    "diagnostics": "node scripts/run-diagnostics.js"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Gamefree Team",
+  "license": "MIT",
+  "keywords": [
+    "gaming",
+    "browser",
+    "html5-games",
+    "web-games",
+    "game-platform",
+    "virtual-desktop"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dermondosolol-cmyk/Gamefree-inwebbrowser"
+  },
+  "bugs": {
+    "url": "https://github.com/dermondosolol-cmyk/Gamefree-inwebbrowser/issues"
+  },
+  "homepage": "https://gamefree-browser.com"
+}

@@ -1,0 +1,10 @@
+{
+  "port": 8000,
+  "host": "localhost",
+  "cors": true,
+  "cors-headers": "Content-Type,Authorization,X-Requested-With",
+  "gzip": true,
+  "timeout": 60000,
+  "showDir": false,
+  "openBrowser": true
+}

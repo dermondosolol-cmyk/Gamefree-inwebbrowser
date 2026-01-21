@@ -1,0 +1,135 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                    🎮 VIRTUAL GAMING PC - QUICK START                     ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📍 LOCATION:
+   Tab Navigation → "Virtual PC" (last tab in the navigation menu)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 GETTING STARTED:
+
+   1. Scroll to the "Virtual PC" tab at the top of the page
+   2. Click on it to activate the desktop environment
+   3. You'll see a desktop with a taskbar at the bottom
+   4. Click the "🪟 Start" button to open the Start Menu
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📺 UI LAYOUT:
+
+   ┌─────────────────────────────────────────────────────────┐
+   │  Desktop Area (Gray grid background)                    │
+   │                                                         │
+   │  ┌─────────────────────┐  ┌───────────────────────┐   │
+   │  │ Game Search Window  │  │ Game Browser Window   │   │
+   │  │ (draggable)         │  │ (draggable)           │   │
+   │  └─────────────────────┘  └───────────────────────┘   │
+   │                                                         │
+   │  ┌─────────────────────────────────────────────────┐   │
+   │  │ Terminal Window (minimized by default)          │   │
+   │  │ (draggable)                                     │   │
+   │  └─────────────────────────────────────────────────┘   │
+   │                                                         │
+   ├─────────────────────────────────────────────────────────┤
+   │ 🪟 Start │ 💾 512GB │ 🧠 8GB RAM │ ⚡ 1920x1080 │ 14:30│
+   └─────────────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎮 PLAYING YOUR FIRST GAME:
+
+   Option A: Search & Launch (Easiest)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Click "🪟 Start" button
+   2. Click "🔍 Search Games"
+   3. Type "2048" or "snake" or any game name
+   4. Click the matching game result
+   5. Game launches immediately in the browser window!
+
+   Option B: Browse Games
+   ━━━━━━━━━━━━━━━━━━━━━━
+   1. Click "🪟 Start" button
+   2. Click "🌐 Open Browser"
+   3. Paste a game URL like: https://gabrielecirulli.github.io/2048/
+   4. Click "Load" button
+   5. Game appears in the window!
+
+   Option C: Terminal Commands
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1. Click "🪟 Start" button
+   2. Click "⌨️ Terminal"
+   3. Type "search" to open search window
+   4. Or type "help" to see all commands
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⌨️ KEYBOARD SHORTCUTS:
+
+   ESC      → Close Start Menu / Modals
+   Enter    → Submit search / Load URL / Execute command
+   Tab      → Navigate between fields
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🖱️ MOUSE CONTROLS:
+
+   • Drag Window Headers    → Move windows around desktop
+   • Click "×" Button       → Minimize/close window
+   • Click Game Result      → Launch immediately
+   • Drag Search Result     → Select game
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎮 POPULAR GAMES TO TRY:
+
+   Puzzle: 2048, Tetris, Sudoku, Memory Game
+   Arcade: Flappy Bird, Snake, Pac-Man, Space Invaders
+   Action: Geometry Dash, Doodle Jump, Chrome Dinosaur
+   Sports: Basketball, Football, Soccer, Tennis
+   
+   Just type the game name in the search box!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 PRO TIPS:
+
+   ✓ Partial game names work (type "flap" to find "Flappy Bird")
+   ✓ Search filters as you type (no need to hit Enter)
+   ✓ Windows stay on top when clicked
+   ✓ System time updates in real-time
+   ✓ Terminal accepts abbreviated commands
+   ✓ Multiple windows can be open at once
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 TERMINAL COMMANDS:
+
+   Command    │ What It Does
+   ────────────────────────────────────────────────────────
+   help       │ Shows all available commands
+   games      │ Displays total games available
+   search     │ Opens the Game Search window
+   browser    │ Opens the Game Browser window
+   system     │ Shows your system specifications
+   cls        │ Clears the terminal screen
+   exit       │ Minimizes the terminal window
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 SYSTEM SPECIFICATIONS:
+
+   CPU         Gaming Processor
+   RAM         8GB DDR4
+   Storage     512GB SSD
+   Resolution  1920x1080 (1080p)
+   OS          Virtual Gaming PC v1.0
+
+   (Type "system" in terminal to see this anytime)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 ENJOY THE VIRTUAL GAMING PC! 🎮✨
+
+More games coming soon! Have fun exploring and playing! 🎉
+

@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameCard = document.getElementById('gameCard');
     const statusMsg = document.getElementById('statusMessage');
 
+    // Only initialize if elements exist (legacy integration code)
+    if (!startBtn || !gameCard || !statusMsg) {
+        console.warn('Legacy integration elements not found - using new VirtualPC system');
+        return;
+    }
+
     // 1. Cleaner Click Interaction
     startBtn.addEventListener('click', () => {
         handleGameStart();
@@ -22,21 +28,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. UI Logic and Animations
     function handleGameStart() {
+        // Only proceed if status message exists
+        if (!statusMsg || !gameCard) {
+            console.warn('Required elements not found');
+            return;
+        }
+
         // Simple 2026 interaction: feedback via status message
         statusMsg.textContent = "Initializing Systems...";
         statusMsg.style.transition = "opacity 0.5s ease";
         statusMsg.style.opacity = "1";
 
         // Micro-interaction: Shaking the card on click
-        gameCard.animate([
-            { transform: 'translateX(0px)' },
-            { transform: 'translateX(-5px)' },
-            { transform: 'translateX(5px)' },
-            { transform: 'translateX(0px)' }
-        ], { duration: 200 });
+        if (gameCard.animate) {
+            gameCard.animate([
+                { transform: 'translateX(0px)' },
+                { transform: 'translateX(-5px)' },
+                { transform: 'translateX(5px)' },
+                { transform: 'translateX(0px)' }
+            ], { duration: 200 });
+        }
 
         setTimeout(() => {
-            statusMsg.textContent = "Welcome, Commander.";
+            if (statusMsg) {
+                statusMsg.textContent = "Welcome, Commander.";
+            }
         }, 1500);
     }
 });
+

@@ -1,0 +1,23 @@
+# PRODUCTION BUILD CONFIGURATION
+# Gamefree Browser 2026
+# Optimizations for deployment
+
+## Build Settings
+TARGET=production
+OPTIMIZE=true
+MINIFY=true
+SOURCE_MAPS=false
+
+## Performance Targets
+MAX_BUNDLE_SIZE=500KB
+MAX_CSS_SIZE=100KB
+MAX_JS_SIZE=200KB
+TARGET_LOAD_TIME=2000ms
+
+## Optimization Strategy
+1. Tree shaking - Remove unused code
+2. Code splitting - Split into chunks
+3. Lazy loading - Load code on demand
+4. Caching - Browser cache strategy
+5. Compression - gzip/brotli compression
+6. CDN - Serve from edge locations

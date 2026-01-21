@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Gaming - Free Web Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <div class="container">
+        <!-- Authentication Panel -->
+        <div class="auth-panel" id="authPanel">
+            <div class="auth-content">
+                <div class="auth-left">
+                    <h3>Welcome to Nebula Gaming</h3>
+                    <p>Sign in to unlock video calling and chat features</p>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-auth btn-google" id="googleAuthBtn">
+                        <span class="auth-icon">🔗</span> Sign in with Google
+                    </button>
+                    <button class="btn btn-auth btn-github" id="githubAuthBtn">
+                        <span class="auth-icon">🔗</span> Sign in with GitHub
+                    </button>
+                    <button class="btn btn-auth btn-guest" id="guestAuthBtn">
+                        <span class="auth-icon">👤</span> Continue as Guest
+                    </button>
+                </div>
+                <div class="user-info" id="userInfo" style="display: none;">
+                    <div class="user-avatar" id="userAvatar"></div>
+                    <div class="user-details">
+                        <p id="userName"></p>
+                        <button class="btn-sign-out" id="signOutBtn">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">Nebula Gaming</h1>
+            <p class="subtitle">Play Free Games in Your Browser</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tabs-container">
+            <button class="tab-btn active" data-tab="featured">Featured</button>
+            <button class="tab-btn" data-tab="allgames">All Games</button>
+            <button class="tab-btn" data-tab="puzzle">Puzzle Games</button>
+            <button class="tab-btn" data-tab="arcade">Arcade Games</button>
+            <button class="tab-btn" data-tab="strategy">Strategy</button>
+            <button class="tab-btn" data-tab="yoho">YOHO</button>
+            <button class="tab-btn" data-tab="virtualpc">Virtual PC</button>
+            <button class="tab-btn" data-tab="custom">My Games</button>
+            <button class="tab-btn" data-tab="videocall">📹 Video Call</button>
+            <button class="tab-btn" data-tab="chat">💬 Chat</button>
+        </nav>
+
+        <!-- Game URL Input Section -->
+        <section class="input-section">
+            <h2>Add Your Own Games</h2>
+            <div class="url-input-container">
+                <input 
+                    type="url" 
+                    id="gameUrlInput" 
+                    class="url-input" 
+                    placeholder="Paste game URL here..."
+                    autocomplete="off"
+                >
+                <button class="btn btn-add" id="addGameBtn">Add Game</button>
+            </div>
+            <div class="info-text">Paste a game URL and click Add Game to load it in the "My Games" tab</div>
+        </section>
+
+        <!-- Games Display Section -->
+        <section class="games-section">
+            <!-- Featured Tab -->
+            <div class="tab-content active" id="featured-tab" data-content="featured">
+                <h2>Featured Games</h2>
+                <div class="games-list" id="featuredList"></div>
+            </div>
+
+            <!-- All Games Tab -->
+            <div class="tab-content" id="allgames-tab" data-content="allgames">
+                <h2>All Games Library</h2>
+                <div class="games-list" id="allGamesList"></div>
+            </div>
+
+            <!-- Puzzle Tab -->
+            <div class="tab-content" id="puzzle-tab" data-content="puzzle">
+                <h2>Puzzle Games</h2>
+                <div class="games-list" id="puzzleList"></div>
+            </div>
+
+            <!-- Arcade Tab -->
+            <div class="tab-content" id="arcade-tab" data-content="arcade">
+                <h2>Arcade Games</h2>
+                <div class="games-list" id="arcadeList"></div>
+            </div>
+
+            <!-- Strategy Tab -->
+            <div class="tab-content" id="strategy-tab" data-content="strategy">
+                <h2>Strategy Games</h2>
+                <div class="games-list" id="strategyList"></div>
+            </div>
+
+            <!-- YOHO Tab -->
+            <div class="tab-content" id="yoho-tab" data-content="yoho">
+                <h2>YOHO Game</h2>
+                <div class="yoho-container">
+                    <iframe id="yohoFrame" class="yoho-frame" src="https://kastelrutherspatzen.de/components/com_jevents/yoho/" allow="fullscreen"></iframe>
+                </div>
+            </div>
+
+            <!-- Virtual PC Tab -->
+            <div class="tab-content" id="virtualpc-tab" data-content="virtualpc">
+                <h2>Virtual Gaming PC</h2>
+                <div class="virtualpc-container">
+                    <!-- Taskbar -->
+                    <div class="virtualpc-taskbar">
+                        <div class="taskbar-left">
+                            <button class="taskbar-btn" id="startBtn">🪟 Start</button>
+                        </div>
+                        <div class="taskbar-center">
+                            <div class="system-info">
+                                <span>💾 512GB</span>
+                                <span class="divider">|</span>
+                                <span>🧠 8GB RAM</span>
+                                <span class="divider">|</span>
+                                <span>⚡ 1920x1080</span>
+                            </div>
+                        </div>
+                        <div class="taskbar-right">
+                            <span id="systemTime" class="system-time">00:00</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop -->
+                    <div class="virtualpc-desktop">
+                        <!-- Game Search Window -->
+                        <div class="desktop-window" id="searchWindow">
+                            <div class="window-header">
+                                <span>🔍 Game Search</span>
+                                <button class="window-close">×</button>
+                            </div>
+                            <div class="window-content">
+                                <input 
+                                    type="text" 
+                                    id="virtualSearch" 
+                                    class="virtual-search-input" 
+                                    placeholder="Search for games..."
+                                >
+                                <div id="virtualSearchResults" class="virtual-search-results"></div>
+                            </div>
+                        </div>
+
+                        <!-- Game Browser Window -->
+                        <div class="desktop-window" id="browserWindow">
+                            <div class="window-header">
+                                <span>🎮 Game Browser</span>
+                                <button class="window-close">×</button>
+                            </div>
+                            <div class="window-content">
+                                <div class="browser-toolbar">
+                                    <input 
+                                        type="url" 
+                                        id="browserUrl" 
+                                        class="browser-url-bar" 
+                                        placeholder="Enter game URL..."
+                                    >
+                                    <button class="browser-btn" id="browserLoadBtn">Load</button>
+                                </div>
+                                <iframe id="virtualBrowser" class="virtual-browser-iframe" src="about:blank"></iframe>
+                            </div>
+                        </div>
+
+                        <!-- System Terminal Window -->
+                        <div class="desktop-window minimized" id="terminalWindow">
+                            <div class="window-header">
+                                <span>⌨️ Terminal</span>
+                                <button class="window-close">×</button>
+                            </div>
+                            <div class="terminal-content" id="terminalContent">
+                                <div class="terminal-line">C:\Games> Welcome to Virtual Gaming PC</div>
+                                <div class="terminal-line">Type 'help' for available commands</div>
+                                <div class="terminal-input-line">C:\Games> <input type="text" id="terminalInput" class="terminal-input" autocomplete="off"></div>
+                            </div>
+                        </div>
+
+                        <!-- Start Menu -->
+                        <div class="start-menu" id="startMenu" style="display: none;">
+                            <div class="menu-header">🎮 Gaming PC</div>
+                            <div class="menu-section">
+                                <div class="menu-title">Pinned Games</div>
+                                <button class="menu-item" data-action="search">🔍 Search Games</button>
+                                <button class="menu-item" data-action="browser">🌐 Open Browser</button>
+                                <button class="menu-item" data-action="terminal">⌨️ Terminal</button>
+                            </div>
+                            <div class="menu-section">
+                                <div class="menu-title">Storage</div>
+                                <button class="menu-item">💾 File Manager</button>
+                                <button class="menu-item">📊 Storage Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Tab -->
+            <div class="tab-content" id="custom-tab" data-content="custom">
+                <h2>Your Games</h2>
+                <div class="games-list" id="gamesList">
+                    <div class="empty-state">
+                        <p>No games added yet. Add a game URL above to get started!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Call Tab -->
+            <div class="tab-content" id="videocall-tab" data-content="videocall">
+                <h2>Video Call</h2>
+                <div class="videocall-container">
+                    <div class="auth-required" id="videoAuthRequired" style="display: none;">
+                        <p>Please sign in to use video calling</p>
+                        <button class="btn btn-primary" id="signInForVideo">Sign In</button>
+                    </div>
+                    <div class="videocall-content" id="videoCallContent" style="display: none;">
+                        <div class="video-controls">
+                            <input 
+                                type="text" 
+                                id="peerId" 
+                                class="peer-id-input" 
+                                placeholder="Enter peer ID to call..."
+                                readonly
+                            >
+                            <button class="btn btn-primary" id="copyPeerIdBtn">📋 Copy My ID</button>
+                            <button class="btn btn-primary" id="callBtn">📞 Call</button>
+                            <button class="btn btn-danger" id="hangupBtn" style="display: none;">📞 Hang Up</button>
+                        </div>
+                        <div class="video-streams">
+                            <div class="video-stream">
+                                <h3>Your Video</h3>
+                                <video id="localVideo" autoplay muted playsinline></video>
+                            </div>
+                            <div class="video-stream">
+                                <h3>Remote Video</h3>
+                                <video id="remoteVideo" autoplay playsinline></video>
+                            </div>
+                        </div>
+                        <div class="call-info" id="callInfo"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Tab -->
+            <div class="tab-content" id="chat-tab" data-content="chat">
+                <h2>Chat with Online Users</h2>
+                <div class="chat-container">
+                    <div class="auth-required" id="chatAuthRequired" style="display: none;">
+                        <p>Please sign in to use chat</p>
+                        <button class="btn btn-primary" id="signInForChat">Sign In</button>
+                    </div>
+                    <div class="chat-content" id="chatContent" style="display: none;">
+                        <div class="chat-sidebar">
+                            <div class="online-users">
+                                <h3>Online Users <span id="userCount">(0)</span></h3>
+                                <div id="userList" class="user-list"></div>
+                            </div>
+                        </div>
+                        <div class="chat-main">
+                            <div class="chat-header">
+                                <h3 id="chatTitle">Select a user to chat</h3>
+                                <div class="chat-status" id="chatStatus"></div>
+                            </div>
+                            <div class="chat-messages" id="chatMessages"></div>
+                            <div class="chat-input-area">
+                                <input 
+                                    type="text" 
+                                    id="messageInput" 
+                                    class="message-input" 
+                                    placeholder="Type your message..."
+                                    disabled
+                                >
+                                <button class="btn btn-primary" id="sendMessageBtn" disabled>Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <button class="btn btn-secondary" id="clearAllBtn">Clear My Games</button>
+            <button class="btn btn-secondary" id="refreshBtn">Refresh</button>
+        </section>
+    </div>
+
+    <!-- Game Frame Modal -->
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <iframe id="gameFrame" class="game-frame" allow="fullscreen"></iframe>
+        </div>
+    </div>
+
+    <script src="debug-mode.js"></script>
+    <script src="auth.js"></script>
+    <script src="videocall.js"></script>
+    <script src="chat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
