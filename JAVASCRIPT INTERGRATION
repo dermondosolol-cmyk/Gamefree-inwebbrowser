@@ -1,0 +1,42 @@
+// Wait for the DOM to load to ensure elements exist
+document.addEventListener('DOMContentLoaded', () => {
+    const startBtn = document.getElementById('startBtn');
+    const gameCard = document.getElementById('gameCard');
+    const statusMsg = document.getElementById('statusMessage');
+
+    // 1. Cleaner Click Interaction
+    startBtn.addEventListener('click', () => {
+        handleGameStart();
+    });
+
+    // 2. Dynamic Hover Effects (Interaction Feedback)
+    startBtn.addEventListener('mouseenter', () => {
+        startBtn.style.transform = 'scale(1.05)';
+        startBtn.innerText = 'Launch Now?';
+    });
+
+    startBtn.addEventListener('mouseleave', () => {
+        startBtn.style.transform = 'scale(1)';
+        startBtn.innerText = 'Start Game';
+    });
+
+    // 3. UI Logic and Animations
+    function handleGameStart() {
+        // Simple 2026 interaction: feedback via status message
+        statusMsg.textContent = "Initializing Systems...";
+        statusMsg.style.transition = "opacity 0.5s ease";
+        statusMsg.style.opacity = "1";
+
+        // Micro-interaction: Shaking the card on click
+        gameCard.animate([
+            { transform: 'translateX(0px)' },
+            { transform: 'translateX(-5px)' },
+            { transform: 'translateX(5px)' },
+            { transform: 'translateX(0px)' }
+        ], { duration: 200 });
+
+        setTimeout(() => {
+            statusMsg.textContent = "Welcome, Commander.";
+        }, 1500);
+    }
+});
